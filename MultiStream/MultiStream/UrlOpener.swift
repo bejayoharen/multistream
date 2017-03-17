@@ -9,5 +9,5 @@
 import Foundation
 
 protocol UrlOpener: class {
-    func loadUrl(url:URL)
+    func loadUrl(url:URL, onCompletion: ((Error?) -> Void)? )
 }

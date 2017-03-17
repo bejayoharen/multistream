@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var playerHolder: UIView!
+    @IBOutlet weak var player: UrlPlayer!
     @IBOutlet weak var buttonCollection: ButtonCollection!
     @IBOutlet weak var blockingView: UIView!
     
@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonCollection.videoList = videoList
-        buttonCollection.urlOpener = self
+        buttonCollection.urlOpener = player
+        
         reload()
     }
     
@@ -46,13 +47,5 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-
-}
-
-extension ViewController: UrlOpener {
-    func loadUrl(url: URL) {
-        
     }
 }

@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-QN-CVd">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-QN-CVd" userLabel="Player" customClass="UrlPlayer" customModule="MultiStream" customModuleProvider="target">
                                 <rect key="frame" x="16" y="28" width="343" height="195"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -57,9 +57,14 @@
                                                         <action selector="buttonPressed:" destination="Rkd-ZO-O38" eventType="touchUpInside" id="xZR-WI-kht"/>
                                                     </connections>
                                                 </button>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jeT-cH-VWX">
+                                                    <rect key="frame" x="16" y="13" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <connections>
+                                            <outlet property="activity" destination="jeT-cH-VWX" id="VrU-UC-VB8"/>
                                             <outlet property="button" destination="god-wt-53n" id="dQn-oR-7y5"/>
                                         </connections>
                                     </collectionViewCell>
@@ -89,7 +94,7 @@
                             <constraint firstItem="igM-pl-OxW" firstAttribute="top" secondItem="5Oe-QN-CVd" secondAttribute="bottom" constant="15" id="Ocf-g3-jiI"/>
                             <constraint firstItem="igM-pl-OxW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="TwX-xA-T7O"/>
                             <constraint firstItem="5Oe-QN-CVd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="cid-Al-Sj1"/>
-                            <constraint firstItem="5Oe-QN-CVd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iGH-NI-PE7"/>
+                            <constraint firstItem="5Oe-QN-CVd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="iGH-NI-PE7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="igM-pl-OxW" secondAttribute="bottom" constant="15" id="k92-Qd-gGQ"/>
                             <constraint firstAttribute="trailing" secondItem="5Oe-QN-CVd" secondAttribute="trailing" constant="15" id="sX1-8h-oks"/>
                             <constraint firstAttribute="trailing" secondItem="igM-pl-OxW" secondAttribute="trailing" constant="15" id="uLy-im-rXr"/>
@@ -98,7 +103,7 @@
                     <connections>
                         <outlet property="blockingView" destination="9CT-hc-dyv" id="xgN-hL-oKv"/>
                         <outlet property="buttonCollection" destination="igM-pl-OxW" id="zPz-0P-Igs"/>
-                        <outlet property="playerHolder" destination="5Oe-QN-CVd" id="gfw-1O-Hba"/>
+                        <outlet property="player" destination="5Oe-QN-CVd" id="smQ-1O-fjF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

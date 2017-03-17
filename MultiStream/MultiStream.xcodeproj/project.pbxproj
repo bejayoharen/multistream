@@ -19,6 +19,7 @@
 		40472AC31E7C61CE00E2A87E /* MiscError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40472AC21E7C61CE00E2A87E /* MiscError.swift */; };
 		40472AC51E7C681D00E2A87E /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40472AC41E7C681D00E2A87E /* ButtonCollectionViewCell.swift */; };
 		40472AC71E7C7B9300E2A87E /* UrlOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40472AC61E7C7B9300E2A87E /* UrlOpener.swift */; };
+		40472AC91E7C7DB800E2A87E /* UrlPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40472AC81E7C7DB800E2A87E /* UrlPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		40472AC21E7C61CE00E2A87E /* MiscError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscError.swift; sourceTree = "<group>"; };
 		40472AC41E7C681D00E2A87E /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		40472AC61E7C7B9300E2A87E /* UrlOpener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlOpener.swift; sourceTree = "<group>"; };
+		40472AC81E7C7DB800E2A87E /* UrlPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				40472A931E7C547900E2A87E /* Main.storyboard */,
 				40472A8F1E7C547900E2A87E /* AppDelegate.swift */,
 				40472A911E7C547900E2A87E /* ViewController.swift */,
+				40472AC81E7C7DB800E2A87E /* UrlPlayer.swift */,
 				40472ABD1E7C5C1900E2A87E /* ButtonCollection.swift */,
 				40472AC41E7C681D00E2A87E /* ButtonCollectionViewCell.swift */,
 				40472AC61E7C7B9300E2A87E /* UrlOpener.swift */,
@@ -279,6 +282,7 @@
 			files = (
 				40472ABE1E7C5C1900E2A87E /* ButtonCollection.swift in Sources */,
 				40472AC01E7C5E0100E2A87E /* VideoList.swift in Sources */,
+				40472AC91E7C7DB800E2A87E /* UrlPlayer.swift in Sources */,
 				40472A921E7C547900E2A87E /* ViewController.swift in Sources */,
 				40472AC31E7C61CE00E2A87E /* MiscError.swift in Sources */,
 				40472AC51E7C681D00E2A87E /* ButtonCollectionViewCell.swift in Sources */,

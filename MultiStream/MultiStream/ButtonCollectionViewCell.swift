@@ -10,6 +10,7 @@ import UIKit
 
 class ButtonCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     weak var delegate: UrlOpener?
     var url:URL?
@@ -17,12 +18,33 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     func setupWith( name: String, url: URL? ) {
         button.setTitle(name, for: .normal)
         self.url = url
+        activity.isHidden = true
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
         if delegate == nil || url == nil {
             return
         }
-        delegate!.loadUrl(url: url!)
+        activity.isHidden = false
+        delegate!.loadUrl(url: url!, onCompletion: { [weak self] error in
+            self?.activity.isHidden = true
+            if error != nil {
+                let alert = UIAlertController( title:"Failed to load video", message:error?.localizedDescription, preferredStyle:.alert)
+                
+                let defaultAction = UIAlertAction( title:"Okay", style:.default, handler:{ action in
+                } )
+                
+                alert.addAction(defaultAction)
+                
+                var rootViewController = UIApplication.shared.keyWindow?.rootViewController
+                if let navigationController = rootViewController as? UINavigationController {
+                    rootViewController = navigationController.viewControllers.first
+                }
+                if let tabBarController = rootViewController as? UITabBarController {
+                    rootViewController = tabBarController.selectedViewController
+                }
+                rootViewController?.present(alert, animated: true, completion: nil)
+            }
+        })
     }
 }
