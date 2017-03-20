@@ -39,24 +39,29 @@ class UrlPlayer : UIView {
 extension UrlPlayer: UrlOpener {
     func loadUrl(url: URL, onCompletion: ((Error?) -> Void)? ) {
         let asset = AVAsset(url:url)
-        asset.loadValuesAsynchronously(forKeys: ["playable"]) { [weak self] in //"duration",
+        let keys = ["playable", "tracks", "duration"]
+        asset.loadValuesAsynchronously(forKeys: keys) { [weak self] in
             DispatchQueue.main.async {
                 if let s = self {
                     // check for failure:
                     var error: NSError? = nil
-                    let status = asset.statusOfValue(forKey: "playable", error: &error)
-                    if error != nil {
-                        if onCompletion != nil {
-                            onCompletion!(error)
+                    
+                    for k in keys {
+                        let status = asset.statusOfValue(forKey: k, error: &error)
+                        if error != nil {
+                            if onCompletion != nil {
+                                onCompletion!(error)
+                            }
+                            return
                         }
-                        return
-                    }
-                    if status == .failed {
-                        if onCompletion != nil {
-                            onCompletion!(MiscError(description: "Failed to Load asset"))
+                        if status == .failed {
+                            if onCompletion != nil {
+                                onCompletion!(MiscError(description: "Failed to Load asset"))
+                            }
+                            return
                         }
-                        return
                     }
+                    
 
                     let item = AVPlayerItem(asset: asset)
                     s.playerItem = item
