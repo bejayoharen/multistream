@@ -41,7 +41,6 @@ class UrlPlayer : UIView {
         
         self.addSubview(activity)
         
-        // FIXME: this is observer overkill!
         self.player.addObserver(self, forKeyPath: #keyPath(AVPlayer.rate), options: [.new,.old], context: nil)
         self.player.addObserver(self, forKeyPath: #keyPath(AVPlayer.status), options: [.new,.old], context: nil)
         
