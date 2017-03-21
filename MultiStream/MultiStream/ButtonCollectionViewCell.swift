@@ -17,6 +17,7 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     
     func setupWith( name: String, url: URL? ) {
         button.setTitle(name, for: .normal)
+        button.layer.cornerRadius = 5
         self.url = url
         activity.isHidden = true
     }
@@ -26,8 +27,10 @@ class ButtonCollectionViewCell: UICollectionViewCell {
             return
         }
         activity.isHidden = false
+        activity.startAnimating()
         delegate!.loadUrl(url: url!, onCompletion: { [weak self] error in
             self?.activity.isHidden = true
+            self?.activity.stopAnimating()
             if error != nil {
                 let alert = UIAlertController( title:"Failed to load video", message:error?.localizedDescription, preferredStyle:.alert)
                 
