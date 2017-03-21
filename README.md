@@ -7,11 +7,12 @@ Create an iOS app that:
 
 ## notes:
 
-* I did not write any tests.
-* I didn't debug error states as fully as I would have liked.
+* I did not write any unit tests.
+* I did not debug error states as fully as I would have liked (eg, airplane mode).
 * When the stream stalls, there's no indication.
-* It should run fine on an iPhone. I only tested briefly on an iPad.
-* I've included some "spinners" to indicate loading and so on, but these can be toughy on iOS, and I didn't have a chance to fully test them.
+* There's no particular handling of the case when the stream gets to the end.
+* I only tested briefly on iPad.
+* I've included some "spinners" (Activity views) to indicate loading and so on, but these can be touchy on iOS, and I didn't have a chance to fully test them.
 * There are a few other misc other issues.
 
 ## Compile and run
