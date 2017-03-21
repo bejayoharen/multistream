@@ -1,11 +1,11 @@
-# multistream
+# Multistream
 
 Create an iOS app that:
-* Loads a list of videos from https://s3.amazonaws.com/livelike-webs/interviews/video_list.json
+* Loads a list of videos from [url]
 * Plays a video, and gives the user the opportunity switch to another video.
 * Switching should be quick. ie, no backing out to another view.
 
-## notes:
+## Notes:
 
 * I did not write any unit tests.
 * I did not debug error states as fully as I would have liked (eg, airplane mode).
